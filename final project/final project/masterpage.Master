@@ -1,0 +1,119 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="masterpage.Master.cs" Inherits="final_project.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server" >
+    <title></title>
+    <link href="MasterStyle.css" type="text/css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="master.js"></script>
+    
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body onload="signin();" onunload="signout();" >
+    <div class="master">
+        <div style="z-index: 10;" aria-disabled="true">
+            <div class="menu">
+                <input type="search" class="search" id="search" placeholder="Search..." maxlength="100" autocomplete="off" />
+                
+                <img style="height: 100px; width: 300px;" src="logo.PNG" />
+               
+                <% if (user == null || user == "")
+                    { %>
+                <details class="center">
+                    <summary>Sign in / Sign up      </summary>
+                    <button  onclick="openForm()" class="center">Sign in</button>
+                    <button  onclick="register()" class="center">Sign up</button>
+                </details>
+                <%}
+                    else
+                    { %>
+                <details class="center">
+                    <summary>Account managment. Hello <%=user %>!</summary>
+                    <button  onclick="profile()" class="center">profile</button>
+                    <button  onclick="signout()" class="center">Sign out</button>
+                </details>
+                <script>
+
+
+                </script>
+                <%} %>
+            </div>
+            <hr />
+            <div class="nav">
+                <nav>
+                    <a class="nav" href="Booking.aspx">Booking</a>
+                    <a class="nav" href="Homepage.aspx">Homepage</a>
+                    <a class="nav" href="Scheduele.aspx">Scheduele</a>
+                </nav>
+            </div>
+            <div class="login" id="login">
+                <div class="X">
+                    <button id="X" onclick="closeForm()">X</button>
+                </div>
+
+                <div class="center">
+                    <h2 style="margin: 1px; margin-top: 5px;">Login </h2>
+                </div>
+                <form method="post" >
+                    <h6 id="loginerror" style="font-family: 'Acme', sans-serif;margin: 0px;" ></h6>
+                    <table>
+                        <tr>
+                            <td><strong>Email</strong></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Email" name="mail" id="email" required /></td>
+                        </tr>
+                        <tr><td>
+                        <table>
+                            <tr>
+                                <td><h5 style="margin:0">Student</h5></td><td><h5 style="margin:0">Teacher</h5></td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" class="role" name="role" id="role" value="student" /></td><td><input type="radio" name="role" class="role" value="teacher" /></td>
+                            </tr>
+                            
+                        </table>
+                            </td>
+                       </tr>
+                        
+
+                    
+                        <tr>
+                            <td><strong>Password</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <input type="password" placeholder="Password" name="password" id="passwordlogin" required /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="center">
+                                    <input type="submit"  class="button" value="Log in" id="loginsubmit" name="submit"  />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <h5> Don't have an account?<br /> Click <a class="nav" href="register.aspx"> here </a> to Sign up</h5></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+    <div class="contact">
+        <form>
+            <input type="text" class="bottom"  />
+        </form>
+    </div>
+
+</body>
+</html>
