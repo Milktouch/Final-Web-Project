@@ -255,3 +255,96 @@ E:\web\final project\final project\bin\System.Buffers.xml
 E:\web\final project\final project\bin\System.Memory.xml
 E:\web\final project\final project\bin\System.Numerics.Vectors.xml
 E:\web\final project\final project\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\final project\final project\bin\final project.dll.config
+C:\final project\final project\bin\final project.dll
+C:\final project\final project\bin\final project.pdb
+C:\final project\final project\bin\roslyn\csc.exe
+C:\final project\final project\bin\roslyn\csc.exe.config
+C:\final project\final project\bin\roslyn\csc.rsp
+C:\final project\final project\bin\roslyn\csi.exe
+C:\final project\final project\bin\roslyn\csi.exe.config
+C:\final project\final project\bin\roslyn\csi.rsp
+C:\final project\final project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\final project\final project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\final project\final project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\final project\final project\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\final project\final project\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\final project\final project\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\final project\final project\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\final project\final project\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\final project\final project\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\final project\final project\bin\roslyn\Microsoft.Managed.Core.targets
+C:\final project\final project\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\final project\final project\bin\roslyn\System.AppContext.dll
+C:\final project\final project\bin\roslyn\System.Collections.Immutable.dll
+C:\final project\final project\bin\roslyn\System.Console.dll
+C:\final project\final project\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\final project\final project\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\final project\final project\bin\roslyn\System.IO.Compression.dll
+C:\final project\final project\bin\roslyn\System.IO.FileSystem.dll
+C:\final project\final project\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\final project\final project\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\final project\final project\bin\roslyn\System.IO.Pipes.dll
+C:\final project\final project\bin\roslyn\System.Reflection.Metadata.dll
+C:\final project\final project\bin\roslyn\System.Security.AccessControl.dll
+C:\final project\final project\bin\roslyn\System.Security.Claims.dll
+C:\final project\final project\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\final project\final project\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\final project\final project\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\final project\final project\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\final project\final project\bin\roslyn\System.Security.Principal.Windows.dll
+C:\final project\final project\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\final project\final project\bin\roslyn\System.ValueTuple.dll
+C:\final project\final project\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\final project\final project\bin\roslyn\System.Xml.XmlDocument.dll
+C:\final project\final project\bin\roslyn\System.Xml.XPath.dll
+C:\final project\final project\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\final project\final project\bin\roslyn\vbc.exe
+C:\final project\final project\bin\roslyn\vbc.exe.config
+C:\final project\final project\bin\roslyn\vbc.rsp
+C:\final project\final project\bin\roslyn\VBCSCompiler.exe
+C:\final project\final project\bin\roslyn\VBCSCompiler.exe.config
+C:\final project\final project\bin\Antlr3.Runtime.dll
+C:\final project\final project\bin\AspNet.ScriptManager.bootstrap.dll
+C:\final project\final project\bin\AspNet.ScriptManager.jQuery.dll
+C:\final project\final project\bin\BouncyCastle.Crypto.dll
+C:\final project\final project\bin\Google.Protobuf.dll
+C:\final project\final project\bin\K4os.Compression.LZ4.dll
+C:\final project\final project\bin\K4os.Compression.LZ4.Streams.dll
+C:\final project\final project\bin\K4os.Hash.xxHash.dll
+C:\final project\final project\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\final project\final project\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\final project\final project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\final project\final project\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\final project\final project\bin\Microsoft.ScriptManager.WebForms.dll
+C:\final project\final project\bin\Microsoft.Web.Infrastructure.dll
+C:\final project\final project\bin\MySql.Data.dll
+C:\final project\final project\bin\Newtonsoft.Json.dll
+C:\final project\final project\bin\System.Buffers.dll
+C:\final project\final project\bin\System.Memory.dll
+C:\final project\final project\bin\System.Numerics.Vectors.dll
+C:\final project\final project\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\final project\final project\bin\System.Web.Optimization.dll
+C:\final project\final project\bin\Ubiety.Dns.Core.dll
+C:\final project\final project\bin\WebGrease.dll
+C:\final project\final project\bin\ZstdNet.dll
+C:\final project\final project\bin\Google.Protobuf.pdb
+C:\final project\final project\bin\Google.Protobuf.xml
+C:\final project\final project\bin\K4os.Compression.LZ4.xml
+C:\final project\final project\bin\K4os.Compression.LZ4.Streams.xml
+C:\final project\final project\bin\K4os.Hash.xxHash.xml
+C:\final project\final project\bin\MySql.Data.xml
+C:\final project\final project\bin\System.Buffers.xml
+C:\final project\final project\bin\System.Memory.xml
+C:\final project\final project\bin\System.Numerics.Vectors.xml
+C:\final project\final project\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\final project\final project\bin\System.Web.Optimization.xml
+C:\final project\final project\bin\Newtonsoft.Json.xml
+C:\final project\final project\bin\Antlr3.Runtime.pdb
+C:\final project\final project\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\final project\final project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\final project\final project\obj\Debug\final project.csprojAssemblyReference.cache
+C:\final project\final project\obj\Debug\final project.csproj.CoreCompileInputs.cache
+C:\final project\final project\obj\Debug\final project.csproj.CopyComplete
+C:\final project\final project\obj\Debug\final project.dll
+C:\final project\final project\obj\Debug\final project.pdb

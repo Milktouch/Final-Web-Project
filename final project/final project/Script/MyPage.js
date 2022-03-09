@@ -1,0 +1,5 @@
+﻿function Ajax(data, user) {
+     
+}
+
+

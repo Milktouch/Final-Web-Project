@@ -181,7 +181,7 @@ namespace Workingwithsql
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-        public static string[,] Getdata(string connstr, string tablename, string whatdata, string condition)
+        public static dynamic[,] Getdata(string connstr, string tablename, string whatdata, string condition)
         {
 
             DataTable table = new DataTable();
@@ -204,14 +204,14 @@ namespace Workingwithsql
             {
                 cols++;
             }
-            string[,] Dataarr = new string[rows, cols];
+            dynamic[,] Dataarr = new dynamic[rows, cols];
             int i = 0;
             foreach (DataRow row in table.Rows)
             {
                 int j = 0;
                 foreach (DataColumn column in table.Columns)
                 {
-                    Dataarr[i, j] = row.Field<string>(column);
+                    Dataarr[i, j] = row.Field<dynamic>(column);
                     j++;
                 }
 

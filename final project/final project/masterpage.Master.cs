@@ -5,38 +5,54 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace final_project
 {
 
     public partial class Site1 : System.Web.UI.MasterPage
     {
         
-        public string user;
+        public string[] user=new string[7];
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             //calling a js function (must be in head and not a seperate file)
             //Page.ClientScript.RegisterStartupScript(this.GetType(),"CallMyFunction","MyFunction()",true);
-            
+            if (Session["UserData"]!=null)
+            {
+                user = (string[])Session["UserData"];
+            }
             if (Request.Form["submit"] != null)
             {
 
                 string email = Request.Form["mail"];
                 string password = Request.Form["password"];
-                string role = Request.Form["role"];
-                string condition = "mail='" + email + "'";
-                string whatdata = "password,firstname";
-                string connstr = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=C:\USERS\BAYAH\ONEDRIVE\DOCUMENTS\DATABASES\DATABASE1.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-                string table = "UserTable";
-                string[,] data = Workingwithsql.MicrosoftSqldata.Getdata(connstr, table, whatdata, condition);
+                string condition = "Email='" + email + "'";
+                string whatdata = "password,Id";
+                string table = "LoginTable";
+                dynamic[,] data = Workingwithsql.MicrosoftSqldata.Getdata(connstr.Get(), table, whatdata, condition);
                 if (data[0,0].Equals(password))
                 {
-                    user = data[0, 1];
+                    whatdata = "*";
+                    table = $"User{data[0, 1]}";
+                    data = Workingwithsql.MicrosoftSqldata.Getdata(connstr.Get(), table, whatdata, condition);
+                    for (int i = 0; i < user.Length; i++)
+                    {
+                        user[i] = data[0, i];
+                    }
+                    Session["UserData"] = user;
                 }
-                
+
             }
             
-
+        }
+        public void SignOut()
+        {
+            Response.Write("Triggered");
+            Session["UserData"] = null;
+            user = null;
+            Response.Redirect("Homepage.aspx");
         }
     }
 }

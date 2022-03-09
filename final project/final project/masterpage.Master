@@ -1,19 +1,18 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="masterpage.Master.cs" Inherits="final_project.Site1" %>
 
 <!DOCTYPE html>
-
 <html>
 <head runat="server" >
     <title></title>
-    <link href="MasterStyle.css" type="text/css" rel="stylesheet" />
+    <link href="./Style/MasterStyle.css" type="text/css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="master.js"></script>
+    <script src="./Script/master.js"></script>
     
     
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body onload="signin();" onunload="signout();" >
+<body>
     <div class="master">
         <div style="z-index: 10;" aria-disabled="true">
             <div class="menu">
@@ -21,7 +20,7 @@
                 
                 <img style="height: 100px; width: 300px;" src="logo.PNG" />
                
-                <% if (user == null || user == "")
+                <% if (user[0] == null || user[0] == "")
                     { %>
                 <details class="center">
                     <summary>Sign in / Sign up      </summary>
@@ -32,7 +31,7 @@
                     else
                     { %>
                 <details class="center">
-                    <summary>Account managment. Hello <%=user %>!</summary>
+                    <summary>Hello <%=user[0] %>!</summary>
                     <button  onclick="profile()" class="center">profile</button>
                     <button  onclick="signout()" class="center">Sign out</button>
                 </details>
@@ -68,21 +67,6 @@
                             <td>
                                 <input type="text" placeholder="Email" name="mail" id="email" required /></td>
                         </tr>
-                        <tr><td>
-                        <table>
-                            <tr>
-                                <td><h5 style="margin:0">Student</h5></td><td><h5 style="margin:0">Teacher</h5></td>
-                            </tr>
-                            <tr>
-                                <td><input type="radio" class="role" name="role" id="role" value="student" /></td><td><input type="radio" name="role" class="role" value="teacher" /></td>
-                            </tr>
-                            
-                        </table>
-                            </td>
-                       </tr>
-                        
-
-                    
                         <tr>
                             <td><strong>Password</strong></td>
                         </tr>
