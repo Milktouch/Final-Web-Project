@@ -1,0 +1,14 @@
+﻿body {
+    padding:10px,10px,10px,10px;
+}
+.userdata{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+#createmeeting {
+    display: flex;
+    flex-direction: column;
+    background: #bcc0cc;
+    border-radius: 15px;
+}

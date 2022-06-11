@@ -11,7 +11,7 @@ namespace final_project
 {
 
 
-    public partial class Contact
+    public partial class Profile
     {
     }
 }

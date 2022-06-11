@@ -1,17 +1,30 @@
 ﻿
+$("#search").on('keyup',  (e)=> {
+    if (e.key === 'Enter' || e.keyCode === 13) {
+        let url = 'Search.aspx?p=' + $('#search').val();
+        
+        location.assign(url)
+    }
+});
+$("#searchbtn").on('click', (e) => {
+    
+        let url = 'Search.aspx?p=' + $('#search').val();
 
-
+        location.assign(url)
+    
+});
+function admin() {
+    location.assign("Admin.aspx");
+}
 function profile() {
     location.assign("mypage.aspx");
 }
 function register() {
     location.assign("register.aspx");
 }
-function signout() {
+function logout() {
 
-    $.post("/masterpage.Master/SignOut", () => {
-        location.reload(true);
-    })
+    location.assign("logout.aspx")
     
 }
 function openForm() {

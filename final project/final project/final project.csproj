@@ -138,6 +138,9 @@
     <Reference Include="Microsoft.AspNet.FriendlyUrls">
       <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
     </Reference>
+    <Reference Include="websocket-sharp-core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\websocketsharp.core.1.0.0\lib\netstandard2.0\websocket-sharp-core.dll</HintPath>
+    </Reference>
     <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.28\lib\net452\ZstdNet.dll</HintPath>
     </Reference>
@@ -150,20 +153,26 @@
   <ItemGroup>
     <Content Include="About.PNG" />
     <Content Include="About.aspx" />
+    <Content Include="Admin.aspx" />
     <Content Include="App_Data\Database.mdf" />
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
     <Content Include="Booking.aspx" />
+    <Content Include="logout.aspx" />
     <Content Include="mypage.aspx" />
+    <Content Include="Profile.aspx" />
+    <Content Include="Script\Admin.js" />
+    <Content Include="Script\InfoCheck.js" />
+    <Content Include="Script\Profile.js" />
+    <Content Include="Script\Search.js" />
+    <Content Include="Style\Admin.css" />
     <Content Include="Style\colors.css" />
-    <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -215,7 +224,10 @@
     <Content Include="Search.aspx" />
     <Content Include="Site.Master" />
     <Content Include="Style\Mypage.css" />
+    <Content Include="Style\Profile.css" />
     <Content Include="Style\RegisterStyle.css" />
+    <Content Include="Style\Scheduele.css" />
+    <Content Include="Style\Search.css" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -223,6 +235,12 @@
     <Content Include="masterpage.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -240,6 +258,13 @@
       <DependentUpon>Booking.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConnStr.cs" />
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="mypage.aspx.cs">
       <DependentUpon>mypage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -247,26 +272,19 @@
     <Compile Include="mypage.aspx.designer.cs">
       <DependentUpon>mypage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Scheduele.aspx.cs">
       <DependentUpon>Scheduele.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Scheduele.aspx.designer.cs">
       <DependentUpon>Scheduele.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

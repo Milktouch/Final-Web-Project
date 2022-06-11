@@ -72,10 +72,6 @@ function checkphone() {
             document.getElementById("phonev").style.color = "green";
             document.getElementById("phonev").textContent = "Valid";
         }
-        return 0;
-            
-
-
     }
     if (document.getElementById("phone").value.length != 7) {
         document.getElementById("phonev").textContent = "Not valid. Wrong amount of numbers!";

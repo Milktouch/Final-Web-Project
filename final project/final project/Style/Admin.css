@@ -1,0 +1,52 @@
+﻿.info{
+    text-align:center;
+    border-top:solid;
+    border-bottom:solid;
+    border-color:darkblue;
+    
+}
+#headers > .property {
+    border-radius: 5%;
+    border-color: rgb(38, 44, 221);
+    border-style: solid;
+    font-size: 20px;
+    transition: 300ms;
+}
+
+    #headers > .property:hover, .hselected {
+        background: #454;
+        color: #fff;
+    }
+
+.datarow > .info {
+    border-radius: 5%;
+    border-color: rgb(32, 182, 193);
+    border-style: solid;
+    font-size: 14px;
+    transition: 300ms;
+}
+
+    .datarow > .info:hover, .selected {
+        background: #333;
+        color: rgb(219, 214, 76);
+    }
+#tablecontainer{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.X {
+    padding-right:4px;
+    background-color: #000;
+    border-radius: 5%;
+    border-style: solid;
+    font-size: 20px;
+    transition: 300ms;
+    height: 100%;
+    width: 100%;
+    color: #d34714;
+    font-weight: bold;
+}
+.X:hover {
+    background-color: #555;
+}

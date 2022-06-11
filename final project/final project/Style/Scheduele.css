@@ -1,0 +1,19 @@
+﻿body {
+}
+.meeting {
+    display: flex;
+    flex-direction: row;
+    background: #b2aeae;
+    border: solid;
+    border-radius: 15px;
+    padding: 10px;
+    
+}
+    .meeting > div {
+        display: flex;
+        flex-direction: column;
+    }
+    #meetings{
+       display:flex;
+
+    }

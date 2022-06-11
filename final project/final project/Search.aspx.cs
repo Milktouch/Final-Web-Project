@@ -9,8 +9,10 @@ namespace final_project
 {
     public partial class Search : System.Web.UI.Page
     {
+        public dynamic[,] users;
         protected void Page_Load(object sender, EventArgs e)
         {
+            users = Workingwithsql.MicrosoftSqldata.Getdata(connstr.Get(), "Users", "Id,FirstName,LastName,Email", "");
 
         }
     }

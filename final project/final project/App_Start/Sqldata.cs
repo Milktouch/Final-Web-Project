@@ -15,6 +15,8 @@ namespace Workingwithsql
         //gets the connection string if its saved here ^
         //get use a connection string from here by typing local-x as the connection string
         //x being the connection string number
+        
+
         public static string getconnstr(string connstr)
         {
             try
@@ -89,12 +91,12 @@ namespace Workingwithsql
             conn.Open();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
             adapter.Fill(table);
-            int rows = 1;
+            int rows = 0;
             foreach (DataRow row in table.Rows)
             {
                 rows++;
             }
-            int cols = 1;
+            int cols = 0;
             foreach (DataColumn column in table.Columns)
             {
                 cols++;
@@ -138,6 +140,18 @@ namespace Workingwithsql
             {
                 return connstr;
             }
+        }
+        public static bool IsExist(string connstr, string sql)
+        {
+
+            SqlConnection conn = new SqlConnection(connstr);
+            conn.Open();
+            SqlCommand com = new SqlCommand(sql, conn);
+            SqlDataReader data = com.ExecuteReader();
+            bool found = Convert.ToBoolean(data.Read());
+            conn.Close();
+            return found;
+
         }
         public static void Queryexe(string connstr, string query)
         {
@@ -189,17 +203,22 @@ namespace Workingwithsql
             {
                 whatdata = "*";
             }
-            string query = "SELECT " + whatdata + " from " + tablename + " where " + condition;
+            
+            string query = "SELECT " + whatdata + " from " + tablename ;
+            if (condition != null && condition != "")
+            {
+                query += " where " + condition;
+            }
             SqlConnection conn = new SqlConnection(getconnstr(connstr));
             conn.Open();
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             adapter.Fill(table);
-            int rows = 1;
+            int rows = 0;
             foreach (DataRow row in table.Rows)
             {
                 rows++;
             }
-            int cols = 1;
+            int cols = 0;
             foreach (DataColumn column in table.Columns)
             {
                 cols++;

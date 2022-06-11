@@ -4,11 +4,6 @@
 .master{
     background-color:white;
 }
-.contact{
-    background-color:black;
-    height:auto;
-    width:100%;
-}
 .menu {
     display: flex;
     flex-direction: row;
@@ -120,6 +115,37 @@ nav {
         background-color: #b00d07;
     }
 
-        #X:hover {
-            background-color: #d62720;
+#X:hover {
+background-color: #d62720;
         }
+
+.logininfo{
+    border:none;
+
+}
+[contact-text] {
+    background-color: #9069c7;
+    color: #220b47;
+    border-radius:15px;
+    text-align:center;
+    padding-left:10px;
+    padding-right:10px;
+}
+#contact {
+    background-color: black;
+    height: auto;
+    width: 98%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:10px;
+}
+#contact>*{
+    width:30%;
+    
+}
+.cred{
+    display:flex;
+    flex-direction:column;
+    border-radius:10px;
+}

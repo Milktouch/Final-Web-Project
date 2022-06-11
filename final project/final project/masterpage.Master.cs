@@ -4,55 +4,83 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using System.Net.Mail;
+using System.Collections;
 
 namespace final_project
 {
 
     public partial class Site1 : System.Web.UI.MasterPage
     {
-        
-        public string[] user=new string[7];
-
+        public dynamic[,] Users = { { "" } };
+        public dynamic[] user=new dynamic[8];
+        public string err = "";
+        public string mailerr = "";
+        public bool Admin = false;
         protected void Page_Load(object sender, EventArgs e)
         {
+            err = "";
+            Users = Workingwithsql.MicrosoftSqldata.Getdata(connstr.Get(), "Users", "FirstName", "");
+            if (Session["Admin"] == null)
+            {
+                Session["Admin"] = false;
+            }
             
-            //calling a js function (must be in head and not a seperate file)
-            //Page.ClientScript.RegisterStartupScript(this.GetType(),"CallMyFunction","MyFunction()",true);
+            Admin = (bool)Session["Admin"];
+            
+            if (Application["Users"] == null)
+            {
+                Application["Users"] = new ArrayList();
+            }
             if (Session["UserData"]!=null)
             {
-                user = (string[])Session["UserData"];
+                user = (dynamic[])Session["UserData"];
+                return;
             }
             if (Request.Form["submit"] != null)
             {
 
                 string email = Request.Form["mail"];
                 string password = Request.Form["password"];
-                string condition = "Email='" + email + "'";
-                string whatdata = "password,Id";
-                string table = "LoginTable";
-                dynamic[,] data = Workingwithsql.MicrosoftSqldata.Getdata(connstr.Get(), table, whatdata, condition);
-                if (data[0,0].Equals(password))
+                if (email == "admin"&&password=="admin")
                 {
-                    whatdata = "*";
-                    table = $"User{data[0, 1]}";
-                    data = Workingwithsql.MicrosoftSqldata.Getdata(connstr.Get(), table, whatdata, condition);
-                    for (int i = 0; i < user.Length; i++)
-                    {
-                        user[i] = data[0, i];
-                    }
-                    Session["UserData"] = user;
+                    Session["Admin"] = true;
+                    Admin = true;
+                    return;
                 }
+                string condition = "Email='" + email + "'";
+                string whatdata = "*";
+                string table = "Users";
+                dynamic[,] data = Workingwithsql.MicrosoftSqldata.Getdata(connstr.Get(), table, whatdata, condition);
 
+                if (data.GetLength(0)>0)
+                {
+
+                    if (data[0, 7].Equals(password))
+                    {
+                        for (int i = 1; i < user.Length; i++)
+                        {
+                            user[i] = data[0, i];
+                        }
+                        Session["UserData"] = user;
+                        Session["Id"] = data[0, 0];
+                        var users = (ArrayList)Application["Users"];
+                        users.Add((int)Session["Id"]);
+                        Application["Users"] = users;
+                    }
+                    else
+                    {
+                        err = "Password does not match";
+                    }
+
+                }
+                else
+                {
+                    err = "a user with that Email does not exist";
+                }
             }
             
         }
-        public void SignOut()
-        {
-            Response.Write("Triggered");
-            Session["UserData"] = null;
-            user = null;
-            Response.Redirect("Homepage.aspx");
-        }
+        
     }
 }
